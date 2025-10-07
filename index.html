@@ -1,143 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <title>CSS Love Letters</title>
-  <link rel="stylesheet" href="https://public.codepenassets.com/css/reset-2.0.min.css">
-  <link rel="stylesheet" href="./style.css">
+  <head>
+    <meta charset="UTF-8">
+    <title>Envelope Open Animation with Hearts</title>
+    <link rel="stylesheet" href="./style.css">
 
-</head>
-
-<body>
-  <section class="cssletter">
-    <div class="envelope">
-      <button class="heart" id="openEnvelope" aria-label="Open Envelope">
-        <span class="heart-text">Open</span>
-      </button>
-      <div class="envelope-flap"></div>
-      <div class="envelope-folds">
-        <div class="envelope-left"></div>
-        <div class="envelope-right"></div>
-        <div class="envelope-bottom"></div>
-      </div>
+  </head>
+    
+  <body>
+  <div class="envlope-wrapper">
+    <div id="envelope" class="close">
+        <div class="front flap"></div>
+        <div class="front pocket"></div>
+        <div class="letter">
+            <div class="words line1"></div>
+            <div class="words line2"></div>
+            <div class="words line3"></div>
+            <div class="words line4"></div>
+        </div>
+        <div class="hearts">
+            <div class="heart a1"></div>
+            <div class="heart a2"></div>
+            <div class="heart a3"></div>
+        </div>
     </div>
-    <div class="letters">
+</div>
+<div class="reset">
+    <button id="open">Open</button>
+    <button id="reset">Reset</button>
+</div>
 
-      <blockquote class="letter center" id="1" tabindex="0" style="left: 390px;">
-        <button class="closeLetter" title="Close Amelia's letter">Close Amelia's letter</button>
-        <p>From the moment our paths intertwined, you filled my days with laughter and my nights with sweet dreams. Your
-          love is a constant melody that plays softly in my heart, making every moment magical.</p>
-        <cite>Amelia Rose</cite>
-      </blockquote>
+<!-- 
 
-      <blockquote class="letter center" id="2" tabindex="0" style="left: 390px;">
-        <button class="closeLetter" title="Close Oliver's letter">Close Oliver's letter</button>
-        <p>Every shared glance and whispered secret adds another verse to our endless love song. You make even the
-          simplest moments sparkle with joy and wonder, as if we’re living in our very own romantic film.</p>
-        <cite>Oliver James</cite>
-      </blockquote>
+Inspired by:
 
-      <blockquote class="letter center" id="3" tabindex="0" style="left: 390px;">
-        <button class="closeLetter" title="Close Isabella's letter">Close Isabella's letter</button>
-        <p>In your arms, I find both comfort and adventure. You are the calm in my storm and the spark that ignites my
-          passion, turning every day into a delightful escapade full of surprises.</p>
-        <cite>Isabella Grace</cite>
-      </blockquote>
+    * https://medium.com/web-for-you/how-to-make-a-interactive-envelope-9df970614eea
+    * https://codepen.io/lisafolkerson/pen/BjRoJO    
 
-      <blockquote class="letter center" id="4" tabindex="0" style="left: 390px;">
-        <button class="closeLetter" title="Close William's letter">Close William's letter</button>
-        <p>Your love is as sweet as a box of chocolates and as playful as a cheeky wink. With you, life is a joyful
-          celebration of every little delight—and a few silly moments that make me grin from ear to ear.</p>
-        <cite>William Arthur</cite>
-      </blockquote>
+-->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script><script  src="./script.js"></script>
 
-      <blockquote class="letter center" id="5" tabindex="0" style="left: 390px;">
-        <button class="closeLetter" title="Close Charlotte's letter">Close Charlotte's letter</button>
-        <p>Every day with you feels like a page from a romantic novel, where laughter, tender moments, and unexpected
-          surprises blend into a story I never want to end. I cherish our every adventure together.</p>
-        <cite>Charlotte Mae</cite>
-      </blockquote>
-
-    </div>
-  </section>
-
-  <footer>
-    <a href="https://frills.dev">
-      <!-- svg -->
-    </a>
-  </footer>
-  <script>
-    const letters = document.querySelectorAll(".letter");
-    const lettersContainer = document.querySelector(".letters");
-    let zIndexCounter = 10;
-
-    const shuffleArray = (array) => {
-      for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-      }
-    };
-
-    const shuffledThings = Array.from(letters);
-    shuffleArray(shuffledThings);
-
-    shuffledThings.forEach((letter) => {
-      lettersContainer.appendChild(letter);
-      const center = document.querySelector(".cssletter").offsetWidth / 2 - letter.offsetWidth / 2;
-      letter.style.left = `${center}px`;
-
-      function isOverflown(element) {
-        return element.scrollHeight > element.clientHeight || element.scrollWidth > element.clientWidth;
-      }
-
-      if (!isOverflown(letter)) {
-        letter.classList.add("center");
-      }
-      let offsetX, offsetY;
-      letter.addEventListener("mousedown", (e) => {
-        if (e.target.tagName !== "BUTTON") {
-          const rect = e.target.getBoundingClientRect();
-
-          letter.style.position = "fixed";
-          letter.style.left = `${rect.left}px`;
-          letter.style.top = `${rect.top}px`;
-
-          offsetX = e.clientX - rect.left;
-          offsetY = e.clientY - rect.top;
-
-          letter.style.zIndex = zIndexCounter++;
-          const moveAt = (posX, posY) => {
-            letter.style.left = `${posX - offsetX}px`;
-            letter.style.top = `${posY - offsetY}px`;
-          };
-          const onMouseMove = (moveEvent) => moveAt(moveEvent.clientX, moveEvent.clientY);
-          const onMouseUp = () => {
-            document.removeEventListener("mousemove", onMouseMove);
-            document.removeEventListener("mouseup", onMouseUp);
-          };
-          document.addEventListener("mousemove", onMouseMove);
-          document.addEventListener("mouseup", onMouseUp);
-        }
-      });
-    });
-    document.querySelector("#openEnvelope").addEventListener("click", () => {
-      document.querySelector(".envelope").classList.add("active");
-    });
-    const closeButtons = document.querySelectorAll(".closeLetter");
-    closeButtons.forEach((button) => {
-      button.addEventListener("click", (e) => {
-        e.preventDefault();
-        const letter = e.target.closest(".letter");
-        if (letter) {
-          letter.style.display = "none";
-        }
-      });
-    });
-
-  </script>
-
-</body>
-
-
+  </body>
+  
 </html>
