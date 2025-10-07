@@ -22,7 +22,7 @@
   :root {
     --envelope-x: 700px;
     --envelope-y: 500px;
-    --letter-x: 600px;
+    --letter-x: 650px;
     --letter-y: calc(500px - 1rem - 10px);
     /* --envelope-x: 600px;
     --envelope-y: 400px;
@@ -266,7 +266,7 @@ body {
 
 @media (min-width: 650px) {
   .letter {
-    font-size: 1.3rem;
+    font-size: 1.7rem;
   }
 }
 .closeLetter {
