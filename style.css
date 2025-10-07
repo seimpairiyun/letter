@@ -20,9 +20,9 @@
 
 @media (min-width: 650px) {
   :root {
-    --envelope-x: 700px;
+    --envelope-x: 800px;
     --envelope-y: 500px;
-    --letter-x: 650px;
+    --letter-x: 750px;
     --letter-y: calc(500px - 1rem - 10px);
     /* --envelope-x: 600px;
     --envelope-y: 400px;
@@ -290,7 +290,7 @@ body {
 
 @media (min-width: 650px) {
   .letter {
-    font-size: 1.7rem;
+    font-size: 2rem;
   }
 }
 .closeLetter {
@@ -307,7 +307,7 @@ body {
 
 .closeLetter::before {
   content: "˚ʚ❤︎ɞ˚";
-  font-size: 1.5rem !important;
+  font-size: 2rem !important;
   font-family: var(--letter-font);
   color: var(--letter-button-text);
   text-align: center;
