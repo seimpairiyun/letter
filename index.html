@@ -1,46 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
-    <meta charset="UTF-8">
-    <title>Envelope Open Animation with Hearts</title>
-    <link rel="stylesheet" href="./style.css">
+<head>
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+  <meta charset="UTF-8">
+  <title>CSS Love Letters</title>
+  <link rel="stylesheet" href="https://public.codepenassets.com/css/reset-2.0.min.css">
+  <link rel="stylesheet" href="./style.css">
 
-  </head>
-    
-  <body>
-  <div class="envlope-wrapper">
-    <div id="envelope" class="close">
-        <div class="front flap"></div>
-        <div class="front pocket"></div>
-        <div class="letter">
-            <div class="words line1"></div>
-            <div class="words line2"></div>
-            <div class="words line3"></div>
-            <div class="words line4"></div>
-        </div>
-        <div class="hearts">
-            <div class="heart a1"></div>
-            <div class="heart a2"></div>
-            <div class="heart a3"></div>
-        </div>
+</head>
+
+<body>
+  <section class="cssletter">
+    <div class="envelope">
+      <button class="heart" id="openEnvelope" aria-label="Open Envelope">
+        <span class="heart-text"></span>
+      </button>
+      <div class="envelope-flap"></div>
+      <div class="envelope-folds">
+        <div class="envelope-left"></div>
+        <div class="envelope-right"></div>
+        <div class="envelope-bottom"></div>
+      </div>
     </div>
-</div>
-<div class="reset">
-    <button id="open">Open</button>
-    <button id="reset">Reset</button>
-</div>
+    <div class="letters">
 
-<!-- 
+      <blockquote class="letter center" id="1" tabindex="0" style="left: 390px;">
+        <button class="closeLetter" title="Tutup"></button>
+        <p>Terima kasih, sudah mencintaiku dengan cara yang sunyi, tapi selalu sampai..</p>
+        <cite>Afizh</cite>
+      </blockquote>
 
-Inspired by:
+      <blockquote class="letter center" id="2" tabindex="0" style="left: 390px;">
+        <button class="closeLetter" title="Tutup"></button>
+        <p>Terima kasih, karena telah menjadi hujan paling lembut.
+          Di tengah hari-hari ku yang riuh.
+          Kita adalah sabar yang hidup,
+          yang menjahit hari demi hari dengan kasih
+          meski waktu seringkali terburu-buru.
+        </p>
 
-    * https://medium.com/web-for-you/how-to-make-a-interactive-envelope-9df970614eea
-    * https://codepen.io/lisafolkerson/pen/BjRoJO    
+        <cite>4/5</cite>
+      </blockquote>
 
--->
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script><script  src="./script.js"></script>
+      <blockquote class="letter center" id="3" tabindex="0" style="left: 390px;">
+        <button class="closeLetter" title="Tutup"></button>
+        <p>Aku tahu aku tak selalu mudah dicintai.
+          Terkadang keras kepala,
+          terkadang terlalu diam dan kamu tetap disana,
+          dengan sabar yang tidak pernah meminta imbalan.</p>
 
-  </body>
-  
+        <cite>3/5</cite>
+      </blockquote>
+
+      <blockquote class="letter center" id="4" tabindex="0" style="left: 390px;">
+        <button class="closeLetter" title="Tutup"></button>
+        <p>Kamu bukan hanya rumah, <br>kamu adalah kompas,
+          yang tetap menunjuk ke arah yang benar.
+          Bahkan ketika aku berjalan menjauh,
+          tersesat dalam kabut kepala sendiri.</p>
+
+        <cite>2/5</cite>
+      </blockquote>
+
+      <blockquote class="letter center" id="5" tabindex="0" style="left: 390px;">
+        <button class="closeLetter" title="Tutup"></button>
+        <p>Terima kasih..<br>karena tetap menjadi api kecil
+          yang hangat di ujung hari⸴
+          saat dunia terlalu dingin
+          dan aku lupa cara menyelimuti diriku sendiri⸴</p>
+
+        <cite>1/5</cite>
+      </blockquote>
+
+    </div>
+  </section>
+
+  <footer>
+    <a href="https://benya.vercel.app">
+      <!-- svg -->
+    </a>
+  </footer>
+  <script>
+    const letters = document.querySelectorAll(".letter");
+    const lettersContainer = document.querySelector(".letters");
+    let zIndexCounter = 10;
+
+    const shuffledThings = Array.from(letters);
+
+    shuffledThings.forEach((letter) => {
+      lettersContainer.appendChild(letter);
+      const center = document.querySelector(".cssletter").offsetWidth / 2 - letter.offsetWidth / 2;
+      letter.style.left = `${center}px`;
+
+      function isOverflown(element) {
+        return element.scrollHeight > element.clientHeight || element.scrollWidth > element.clientWidth;
+      }
+
+      if (!isOverflown(letter)) {
+        letter.classList.add("center");
+      }
+      let offsetX, offsetY;
+      letter.addEventListener("mousedown", (e) => {
+        if (e.target.tagName !== "BUTTON") {
+          const rect = e.target.getBoundingClientRect();
+
+          letter.style.position = "fixed";
+          letter.style.left = `${rect.left}px`;
+          letter.style.top = `${rect.top}px`;
+
+          offsetX = e.clientX - rect.left;
+          offsetY = e.clientY - rect.top;
+
+          letter.style.zIndex = zIndexCounter++;
+          const moveAt = (posX, posY) => {
+            letter.style.left = `${posX - offsetX}px`;
+            letter.style.top = `${posY - offsetY}px`;
+          };
+          const onMouseMove = (moveEvent) => moveAt(moveEvent.clientX, moveEvent.clientY);
+          const onMouseUp = () => {
+            document.removeEventListener("mousemove", onMouseMove);
+            document.removeEventListener("mouseup", onMouseUp);
+          };
+          document.addEventListener("mousemove", onMouseMove);
+          document.addEventListener("mouseup", onMouseUp);
+        }
+      });
+    });
+    document.querySelector("#openEnvelope").addEventListener("click", () => {
+      document.querySelector(".envelope").classList.add("active");
+    });
+    const closeButtons = document.querySelectorAll(".closeLetter");
+    closeButtons.forEach((button) => {
+      button.addEventListener("click", (e) => {
+        e.preventDefault();
+        const letter = e.target.closest(".letter");
+        if (letter) {
+          letter.style.display = "none";
+        }
+      });
+    });
+
+  </script>
+
+</body>
+
+
 </html>
