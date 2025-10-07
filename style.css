@@ -20,10 +20,14 @@
 
 @media (min-width: 650px) {
   :root {
-    --envelope-x: 600px;
+    --envelope-x: 700px;
+    --envelope-y: 500px;
+    --letter-x: 600px;
+    --letter-y: calc(500px - 1rem - 10px);
+    /* --envelope-x: 600px;
     --envelope-y: 400px;
     --letter-x: 500px;
-    --letter-y: calc(400px - 1rem - 10px);
+    --letter-y: calc(400px - 1rem - 10px); */
   }
 }
 html {
