@@ -1,150 +1,214 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+    <head>
+        <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+        <meta charset="UTF-8" />
+        <title>Selamat Ulang Tahun Istriku Yara</title>
+        <link
+            rel="stylesheet"
+            href="https://public.codepenassets.com/css/reset-2.0.min.css"
+        />
+        <link rel="stylesheet" href="./style.css" />
+    </head>
+    <body>
+        <audio autoplay loop>
+            <source src="song.mp3" type="audio/mpeg" />
+        </audio>
+        <button class="control">⏸️</button>
 
-<head>
-  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
-  <meta charset="UTF-8">
-  <title>Selamat Ulang Tahun Istriku Yara</title>
-  <link rel="stylesheet" href="https://public.codepenassets.com/css/reset-2.0.min.css">
-  <link rel="stylesheet" href="./style.css">
+        <section class="cssletter">
+            <div class="envelope">
+                <button
+                    class="heart"
+                    id="openEnvelope"
+                    aria-label="Open Envelope"
+                >
+                    <span class="heart-text"></span>
+                </button>
+                <div class="envelope-flap"></div>
+                <div class="envelope-folds">
+                    <div class="envelope-left"></div>
+                    <div class="envelope-right"></div>
+                    <div class="envelope-bottom"></div>
+                </div>
+            </div>
+            <div class="letters">
+                <blockquote
+                    class="letter center"
+                    id="1"
+                    tabindex="0"
+                    style="left: 390px"
+                >
+                    <button class="closeLetter" title="Tutup"></button>
+                    <p>
+                        Terima kasih, sudah mencintaiku dengan cara yang sunyi,
+                        tapi selalu sampai.. Terima kasih karena kau sudah
+                        dilahirkan..
+                    </p>
+                    <cite>Afizh</cite>
+                </blockquote>
 
-</head>
+                <blockquote
+                    class="letter center"
+                    id="2"
+                    tabindex="0"
+                    style="left: 390px"
+                >
+                    <button class="closeLetter" title="Tutup"></button>
+                    <p>
+                        Terima kasih, karena telah menjadi hujan paling lembut.
+                        Di tengah hari-hari ku yang riuh. Kita adalah sabar yang
+                        hidup, yang menjahit hari demi hari dengan kasih meski
+                        waktu seringkali terburu-buru.
+                    </p>
 
-<body>
-  <section class="cssletter">
-    <div class="envelope">
-      <button class="heart" id="openEnvelope" aria-label="Open Envelope">
-        <span class="heart-text"></span>
-      </button>
-      <div class="envelope-flap"></div>
-      <div class="envelope-folds">
-        <div class="envelope-left"></div>
-        <div class="envelope-right"></div>
-        <div class="envelope-bottom"></div>
-      </div>
-    </div>
-    <div class="letters">
+                    <cite>4/5</cite>
+                </blockquote>
 
-      <blockquote class="letter center" id="1" tabindex="0" style="left: 390px;">
-        <button class="closeLetter" title="Tutup"></button>
-        <p>Terima kasih, sudah mencintaiku dengan cara yang sunyi, tapi selalu sampai..</p>
-        <cite>Afizh</cite>
-      </blockquote>
+                <blockquote
+                    class="letter center"
+                    id="3"
+                    tabindex="0"
+                    style="left: 390px"
+                >
+                    <button class="closeLetter" title="Tutup"></button>
+                    <p>
+                        Aku tahu aku tak selalu mudah dicintai. Terkadang keras
+                        kepala, terkadang terlalu diam dan kamu tetap disana,
+                        dengan sabar dengan tatapan yang tidak pernah menilai.
+                    </p>
 
-      <blockquote class="letter center" id="2" tabindex="0" style="left: 390px;">
-        <button class="closeLetter" title="Tutup"></button>
-        <p>Terima kasih, karena telah menjadi hujan paling lembut.
-          Di tengah hari-hari ku yang riuh.
-          Kita adalah sabar yang hidup,
-          yang menjahit hari demi hari dengan kasih
-          meski waktu seringkali terburu-buru.
-        </p>
+                    <cite>3/5</cite>
+                </blockquote>
 
-        <cite>4/5</cite>
-      </blockquote>
+                <blockquote
+                    class="letter center"
+                    id="4"
+                    tabindex="0"
+                    style="left: 390px"
+                >
+                    <button class="closeLetter" title="Tutup"></button>
+                    <p>
+                        Kamu bukan hanya rumah, <br />kamu adalah kompas, yang
+                        tetap menunjuk ke arah yang benar. Bahkan ketika aku
+                        berjalan menjauh, tersesat dalam kabut kepala
+                        sendiri.<br />
+                        Karena aku adalah badai yang sering lupa arah.
+                    </p>
 
-      <blockquote class="letter center" id="3" tabindex="0" style="left: 390px;">
-        <button class="closeLetter" title="Tutup"></button>
-        <p>Aku tahu aku tak selalu mudah dicintai.
-          Terkadang keras kepala,
-          terkadang terlalu diam dan kamu tetap disana,
-          dengan sabar yang tidak pernah meminta imbalan.</p>
+                    <cite>2/5</cite>
+                </blockquote>
 
-        <cite>3/5</cite>
-      </blockquote>
+                <blockquote
+                    class="letter center"
+                    id="5"
+                    tabindex="0"
+                    style="left: 390px"
+                >
+                    <button class="closeLetter" title="Tutup"></button>
+                    <p>
+                        Terima kasih..<br />karena tetap menjadi api kecil yang
+                        hangat di ujung hari, saat dunia terlalu dingin dan aku
+                        lupa cara menyelimuti diriku sendiri,
+                    </p>
 
-      <blockquote class="letter center" id="4" tabindex="0" style="left: 390px;">
-        <button class="closeLetter" title="Tutup"></button>
-        <p>Kamu bukan hanya rumah, <br>kamu adalah kompas,
-          yang tetap menunjuk ke arah yang benar.
-          Bahkan ketika aku berjalan menjauh,
-          tersesat dalam kabut kepala sendiri.<br>
-          Karena aku adalah badai yang sering lupa arah.</p>
+                    <cite>1/5</cite>
+                </blockquote>
+            </div>
+        </section>
 
-        <cite>2/5</cite>
-      </blockquote>
+        <footer>
+            <a href="https://benya.vercel.app">
+                <!-- svg -->
+            </a>
+        </footer>
+        <script>
+            const audio = document.querySelector("audio");
+            const btn = document.querySelector(".control");
+            let isPlaying = true;
 
-      <blockquote class="letter center" id="5" tabindex="0" style="left: 390px;">
-        <button class="closeLetter" title="Tutup"></button>
-        <p>Terima kasih..<br>karena tetap menjadi api kecil
-          yang hangat di ujung hari,
-          saat dunia terlalu dingin
-          dan aku lupa cara menyelimuti diriku sendiri,</p>
+            btn.addEventListener("click", () => {
+                if (!isPlaying) {
+                    audio.play();
+                    btn.textContent = "⏸️";
+                    isPlaying = true;
+                } else {
+                    audio.pause();
+                    btn.textContent = "▶️";
+                    isPlaying = false;
+                }
+            });
 
-        <cite>1/5</cite>
-      </blockquote>
+            const letters = document.querySelectorAll(".letter");
+            const lettersContainer = document.querySelector(".letters");
+            let zIndexCounter = 10;
 
-    </div>
-  </section>
+            const shuffledThings = Array.from(letters);
 
-  <footer>
-    <a href="https://benya.vercel.app">
-      <!-- svg -->
-    </a>
-  </footer>
-  <script>
-    const letters = document.querySelectorAll(".letter");
-    const lettersContainer = document.querySelector(".letters");
-    let zIndexCounter = 10;
+            shuffledThings.forEach((letter) => {
+                lettersContainer.appendChild(letter);
+                const center =
+                    document.querySelector(".cssletter").offsetWidth / 2 -
+                    letter.offsetWidth / 2;
+                letter.style.left = `${center}px`;
 
-    const shuffledThings = Array.from(letters);
+                function isOverflown(element) {
+                    return (
+                        element.scrollHeight > element.clientHeight ||
+                        element.scrollWidth > element.clientWidth
+                    );
+                }
 
-    shuffledThings.forEach((letter) => {
-      lettersContainer.appendChild(letter);
-      const center = document.querySelector(".cssletter").offsetWidth / 2 - letter.offsetWidth / 2;
-      letter.style.left = `${center}px`;
+                if (!isOverflown(letter)) {
+                    letter.classList.add("center");
+                }
+                let offsetX, offsetY;
+                letter.addEventListener("mousedown", (e) => {
+                    if (e.target.tagName !== "BUTTON") {
+                        const rect = e.target.getBoundingClientRect();
 
-      function isOverflown(element) {
-        return element.scrollHeight > element.clientHeight || element.scrollWidth > element.clientWidth;
-      }
+                        letter.style.position = "fixed";
+                        letter.style.left = `${rect.left}px`;
+                        letter.style.top = `${rect.top}px`;
 
-      if (!isOverflown(letter)) {
-        letter.classList.add("center");
-      }
-      let offsetX, offsetY;
-      letter.addEventListener("mousedown", (e) => {
-        if (e.target.tagName !== "BUTTON") {
-          const rect = e.target.getBoundingClientRect();
+                        offsetX = e.clientX - rect.left;
+                        offsetY = e.clientY - rect.top;
 
-          letter.style.position = "fixed";
-          letter.style.left = `${rect.left}px`;
-          letter.style.top = `${rect.top}px`;
-
-          offsetX = e.clientX - rect.left;
-          offsetY = e.clientY - rect.top;
-
-          letter.style.zIndex = zIndexCounter++;
-          const moveAt = (posX, posY) => {
-            letter.style.left = `${posX - offsetX}px`;
-            letter.style.top = `${posY - offsetY}px`;
-          };
-          const onMouseMove = (moveEvent) => moveAt(moveEvent.clientX, moveEvent.clientY);
-          const onMouseUp = () => {
-            document.removeEventListener("mousemove", onMouseMove);
-            document.removeEventListener("mouseup", onMouseUp);
-          };
-          document.addEventListener("mousemove", onMouseMove);
-          document.addEventListener("mouseup", onMouseUp);
-        }
-      });
-    });
-    document.querySelector("#openEnvelope").addEventListener("click", () => {
-      document.querySelector(".envelope").classList.add("active");
-    });
-    const closeButtons = document.querySelectorAll(".closeLetter");
-    closeButtons.forEach((button) => {
-      button.addEventListener("click", (e) => {
-        e.preventDefault();
-        const letter = e.target.closest(".letter");
-        if (letter) {
-          letter.style.display = "none";
-        }
-      });
-    });
-
-  </script>
-
-</body>
-
-
+                        letter.style.zIndex = zIndexCounter++;
+                        const moveAt = (posX, posY) => {
+                            letter.style.left = `${posX - offsetX}px`;
+                            letter.style.top = `${posY - offsetY}px`;
+                        };
+                        const onMouseMove = (moveEvent) =>
+                            moveAt(moveEvent.clientX, moveEvent.clientY);
+                        const onMouseUp = () => {
+                            document.removeEventListener(
+                                "mousemove",
+                                onMouseMove,
+                            );
+                            document.removeEventListener("mouseup", onMouseUp);
+                        };
+                        document.addEventListener("mousemove", onMouseMove);
+                        document.addEventListener("mouseup", onMouseUp);
+                    }
+                });
+            });
+            document
+                .querySelector("#openEnvelope")
+                .addEventListener("click", () => {
+                    document.querySelector(".envelope").classList.add("active");
+                    audio.play();
+                });
+            const closeButtons = document.querySelectorAll(".closeLetter");
+            closeButtons.forEach((button) => {
+                button.addEventListener("click", (e) => {
+                    e.preventDefault();
+                    const letter = e.target.closest(".letter");
+                    if (letter) {
+                        letter.style.display = "none";
+                    }
+                });
+            });
+        </script>
+    </body>
 </html>
