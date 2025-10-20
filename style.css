@@ -84,6 +84,10 @@ body {
     margin: 24dvh 0;
 }
 
+hati {
+    color: var(--heart-bg);
+}
+
 .envelope {
     position: relative;
     width: var(--envelope-x);
@@ -95,13 +99,13 @@ body {
 }
 
 .envelope::before {
-    content: "˚ʚ❤︎ɞ˚";
+    content: "X"; /*˚ʚ❤︎ɞ˚*/
     background-image: url("bagujul.png");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
 
-    font-size: 9rem;
+    font-size: 25rem;
     color: transparent;
     position: absolute;
     left: 50%;
@@ -326,7 +330,7 @@ body {
     font-size: 0 !important;
     position: absolute;
     top: 1rem;
-    left: 50%;
+    left: 95%;
     transform: translateX(-50%);
     background: none;
     box-shadow: none;
@@ -335,7 +339,8 @@ body {
 }
 
 .closeLetter::before {
-    content: "˚ʚ❤︎ɞ˚";
+    /*content: "˚ʚ❤︎ɞ˚";*/
+    content: "✗";
     font-size: 2rem !important;
     font-family: var(--letter-font);
     color: var(--letter-button-text);
@@ -355,21 +360,10 @@ body {
 .closeLetter:hover::before,
 .closeLetter:active::before,
 .closeLetter:focus::before {
-    content: "X";
+    content: "✖";
 }
 
 /* Attribution */
 :root {
     --bodybg: darkred;
-}
-
-footer {
-    position: fixed;
-    bottom: 1rem;
-    right: 1rem;
-    z-index: 10000000;
-}
-
-footer svg {
-    width: 100px;
 }
